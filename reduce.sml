@@ -12,3 +12,6 @@ val rec reduce = fn(g, e, m, n, f) =>
   in finished (n < m)
   end
 
+fun reduce' g e m n f =
+  if n < m then e
+  else g((reduce' g e m (n-1) f) f n)
