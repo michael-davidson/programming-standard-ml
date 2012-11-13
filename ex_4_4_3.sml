@@ -25,3 +25,4 @@ and eval_int_exp (plus (x,y)) = (eval_int_term x) + (eval_int_term y)
    have to come after eval_int_term which would have to come after eval_int_factor
    but eval_int_factor depends on eval_int_exp and would need to come after it. *)
 
+(* ex: (2*3)+(8/(3+5)) can be expressed as 'eval_int_exp (plus(times(int_const 2, int_const 3), divide(int_const 8,paren(plus(times(int_const 3, int_const 1), times(int_const 5, int_const 1))))));' *)
